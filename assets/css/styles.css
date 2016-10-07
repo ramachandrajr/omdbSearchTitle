@@ -1,0 +1,67 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.big {
+	width: 70%;
+	margin: 60px auto;
+	text-align: center;
+}
+
+.big input[type='text'] {
+	padding: 10px;
+	margin-right: 10px;
+	font-size: 1.1em;
+	width: 80%;	
+}
+
+.big input[type='submit'] {
+	border: none;
+	background: #3cba54;
+	color: white;
+	padding: 10px;
+	margin-right: 10px;
+	font-size: 1.1em;
+}
+
+#results {
+	margin-top: 0px;
+}
+
+.dead {
+	color: grey;
+}
+
+.movie {
+	border: 1px solid #ccc;
+	width: 82.5%;
+	margin: 0px 28px;
+	height: 40px;
+	line-height: 2em;
+	color: #4885ed;
+	text-align: left;
+}
+
+.mv-name {
+	padding-left: 20px;
+}
+
+.mv-year {
+	float: right;
+	padding-right: 50px;
+}
+
+
+li {
+	list-style: none;
+}
+
+.no-results p {
+	margin-top: 10%;
+	color: #ccc;
+}
+
+.no-results i {
+	color: #ccc;
+	font-size: 100px;
+}

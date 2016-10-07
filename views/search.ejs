@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Movie Search Engine</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script type="text/javascript" src="/js/lib/jquery-2.1.4.js"></script>
+
+</head>
+<body>
+
+<div id="wrapper" class="big">
+
+	<h1>Just Search Movies</h1>
+
+	<!-- SEARCH FORM -->
+	<form action="/results" method="GET">
+		<input type="text" name="movieSearch" placeholder="Movie Name" id="main-search">	
+		<input type="submit">
+	</form>
+
+
+	<!-- SEARCH RESULTS -->
+	<div id="results">
+		
+		<% if (data === undefined) { %>
+		  	<% /* Do nothin.*/ %>
+		  	<div class="start">
+		  		<p> Go ahead and search don't be shy</p>
+		  	</div>
+		<% } else if (data !== undefined && data.Response === "True") { %>
+			<% var dataArr = data["Search"] %>
+			<% dataArr.forEach(function (movie) { %>
+				<div class="movie">					
+					<span class="mv-name">
+						<%= movie.Title %>
+					</span>				
+					<span class="mv-year">					    
+					    <%= movie.Year %>
+					 </span>
+
+				</div>
+			<% }); %>
+		<% } else if (data !== undefined && data.Response === "False") { %>
+			<div class="no-results">
+			    <p>We Got no results</p>
+			    <i class="fa fa-frown-o" aria-hidden="true"></i>
+			</div>			
+		<% } else { %>
+			oops some problem exists
+		<% } %>
+		
+	</div><!-- results -->
+
+</div><!-- wrapper -->
+
+	<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>
+
